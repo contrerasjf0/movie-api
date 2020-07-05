@@ -3,10 +3,9 @@ const express = require('express');
 const app = express();
 
 const {  config } = require('./config/index');
+const moviesApi = require('./routes/movies');
 
-app.get('/', function (req, res){
-  res.send('index');
-})
+moviesApi(app);
 
 
 app.listen(config.port, function(){
